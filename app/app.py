@@ -1,3 +1,4 @@
+
 import streamlit as st
 
 from modules.home import show_home
@@ -16,23 +17,28 @@ st.set_page_config(
 )
 
 
-/* Modern green agriculture theme */
+# Modern green agriculture design
+st.markdown("""
+<style>
+/* Main background and readable text */
 .stApp {
     background-color: #f5faf4;
     color: #24352a;
 }
 
+/* Page spacing */
 .block-container {
     max-width: 1200px;
     padding-top: 1.5rem;
     padding-bottom: 2rem;
 }
 
-/* Readable headings and text */
+/* Headings */
 h1, h2, h3, h4, h5, h6 {
     color: #1b5e20 !important;
 }
 
+/* Normal text */
 .stApp p,
 .stApp label,
 .stApp li {
@@ -62,10 +68,10 @@ h1, h2, h3, h4, h5, h6 {
 .stButton > button:hover,
 .stDownloadButton > button:hover {
     background-color: #1b5e20;
-    border: 1px solid #1b5e20;
+    color: white !important;
 }
 
-/* Text boxes */
+/* Input fields */
 .stTextInput input,
 .stNumberInput input,
 .stTextArea textarea {
@@ -75,18 +81,13 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 8px;
 }
 
-/* Cards and bordered sections */
-[data-testid="stVerticalBlockBorderWrapper"] {
-    border-radius: 12px;
-}
-
 /* Hide menu and footer */
 #MainMenu,
 footer {
     visibility: hidden;
 }
 
-/* Phone-friendly layout */
+/* Mobile layout */
 @media (max-width: 768px) {
     .block-container {
         padding: 1rem 0.8rem;
@@ -100,6 +101,9 @@ footer {
         font-size: 1.4rem;
     }
 }
+</style>
+""", unsafe_allow_html=True)
+
 
 # Sidebar navigation
 st.sidebar.title("🌱 Smart Agriculture")
@@ -137,8 +141,6 @@ elif page == "Crop Selection":
     show_crop_selection()
 
 
-# Footer
+# Sidebar footer
 st.sidebar.markdown("---")
-st.sidebar.caption(
-    "Smart Agriculture System | Python + Streamlit"
-)
+st.sidebar.caption("Smart Agriculture System | Python + Streamlit")
