@@ -17,10 +17,7 @@ st.set_page_config(
     layout="wide"
 )
 
-if page == "Home":
-    image_path = Path(__file__).parent / "YOUR_EXACT_IMAGE_FILENAME"
-    st.image(str(image_path), use_container_width=True)
-    show_home()
+
 # Modern green agriculture design
 st.markdown("""
 <style>
@@ -127,7 +124,10 @@ page = st.sidebar.radio(
 
 # Display the selected module
 if page == "Home":
+    image_path = Path(__file__).parent / "agriculture.png.png"
+    st.image(str(image_path), use_container_width=True)
     show_home()
+
 
 elif page == "Plant Disease Detection":
     show_disease_detection()
