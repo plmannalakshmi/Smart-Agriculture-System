@@ -43,9 +43,20 @@ footer {
     max-width: 1200px;
 }
 
-/* Light green background */
+/* Light background and readable dark text */
 .stApp {
     background-color: #f5fbf4;
+    color: #222222;
+}
+
+/* Make paragraph text and labels readable */
+.stApp p,
+.stApp label,
+.stApp li,
+.stApp h1,
+.stApp h2,
+.stApp h3 {
+    color: #222222 !important;
 }
 
 /* Dark green headings */
