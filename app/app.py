@@ -1,5 +1,6 @@
 
 import streamlit as st
+from pathlib import Path
 
 from modules.home import show_home
 from modules.disease_detection import show_disease_detection
