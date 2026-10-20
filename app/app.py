@@ -16,7 +16,8 @@ st.set_page_config(
     page_icon="🌱",
     layout="wide"
 )
-st.image("agriculture.png.png", use_container_width=True)
+image_path = Path(__file__).parent / "agriculutre.png.png"
+st.image(str(image_path), use_container_width=True)
 
 # Modern green agriculture design
 st.markdown("""
