@@ -15,84 +15,78 @@ st.set_page_config(
     layout="wide"
 )
 
-# Custom app appearance
-st.markdown("""
-<style>
-/* Hide Streamlit menu and footer */
-#MainMenu {
-    visibility: hidden;
+
+/* Modern green agriculture theme */
+.stApp {
+    background-color: #f5faf4;
+    color: #24352a;
 }
 
+.block-container {
+    max-width: 1200px;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+/* Readable headings and text */
+h1, h2, h3, h4, h5, h6 {
+    color: #1b5e20 !important;
+}
+
+.stApp p,
+.stApp label,
+.stApp li {
+    color: #24352a;
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    background-color: #e5f2e3;
+}
+
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] label {
+    color: #1b5e20 !important;
+}
+
+/* Buttons */
+.stButton > button,
+.stDownloadButton > button {
+    background-color: #2e7d32;
+    color: white !important;
+    border: none;
+    border-radius: 10px;
+    padding: 0.55rem 1rem;
+}
+
+.stButton > button:hover,
+.stDownloadButton > button:hover {
+    background-color: #1b5e20;
+    border: 1px solid #1b5e20;
+}
+
+/* Text boxes */
+.stTextInput input,
+.stNumberInput input,
+.stTextArea textarea {
+    background-color: white;
+    color: #24352a !important;
+    border: 1px solid #b7cdb6;
+    border-radius: 8px;
+}
+
+/* Cards and bordered sections */
+[data-testid="stVerticalBlockBorderWrapper"] {
+    border-radius: 12px;
+}
+
+/* Hide menu and footer */
+#MainMenu,
 footer {
     visibility: hidden;
 }
 
-/* Hide the top decoration and toolbar */
-[data-testid="stDecoration"] {
-    display: none;
-}
-
-[data-testid="stToolbar"] {
-    visibility: hidden;
-}
-
-/* Reduce extra space at the top */
-.block-container {
-    padding-top: 1.5rem;
-    padding-bottom: 2rem;
-    max-width: 1200px;
-}
-
-/* Light background and readable dark text */
-.stApp {
-    background-color: #f5fbf4;
-    color: #222222;
-}
-
-/* Make paragraph text and labels readable */
-.stApp p,
-.stApp label,
-.stApp li,
-.stApp h1,
-.stApp h2,
-.stApp h3 {
-    color: #222222 !important;
-}
-
-/* Dark green headings */
-h1, h2, h3 {
-    color: #246b3b;
-}
-
-/* Sidebar appearance */
-[data-testid="stSidebar"] {
-    background-color: #e8f4e5;
-}
-
-/* Buttons */
-.stButton > button {
-    background-color: #246b3b;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 0.5rem 1rem;
-}
-
-/* Button hover effect */
-.stButton > button:hover {
-    background-color: #19532c;
-    color: white;
-    border: 1px solid #19532c;
-}
-
-/* Input fields */
-.stTextInput input,
-.stTextArea textarea,
-.stSelectbox div[data-baseweb="select"] {
-    border-radius: 8px;
-}
-
-/* Make the layout more phone-friendly */
+/* Phone-friendly layout */
 @media (max-width: 768px) {
     .block-container {
         padding: 1rem 0.8rem;
@@ -106,10 +100,6 @@ h1, h2, h3 {
         font-size: 1.4rem;
     }
 }
-</style>
-""", unsafe_allow_html=True)
-
-
 
 # Sidebar navigation
 st.sidebar.title("🌱 Smart Agriculture")
